@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+function Randomnumber(){
+
+  let[randomnumber,setrandomnumber]=useState(0)
+
+  function number(){
+    let numberk= Math.random()*10
+    setrandomnumber(Math.floor(numberk)+1)
+ 
+  }
+  return(
+    <div>
+      <h1>{randomnumber}</h1>
+      <button onClick={number}>Randomnumber</button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default Randomnumber
